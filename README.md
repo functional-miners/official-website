@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-Download `node` in version `v6.3.1`, together with the newest possible `npm`. Then look [here](https://yarnpkg.com/en/docs/install) how to install `yarn` on your *OS*. After that install `gatsby` globally:
+Download `node` in version `v9.5.0`, together with the newest possible `npm`. Then look [here](https://yarnpkg.com/en/docs/install) how to install `yarn` on your *OS*. After that install `gatsby` globally:
 
 ```bash
 ~ $ yarn global add gatsby-cli
