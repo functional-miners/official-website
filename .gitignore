@@ -14,6 +14,3 @@ node_modules/
 # Other caches and generated stuff:
 .cache/
 public/
-
-# Private credentials:
-src/theme/metadata.private.js
