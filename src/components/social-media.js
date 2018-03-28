@@ -16,6 +16,10 @@ const SocialButtonsContainer = styled.div`
   display: flex;
   flex-order: column;
   justify-content: space-around;
+
+  svg {
+    cursor: pointer;
+  }
 `;
 
 export const SocialButtons = ({ event, url }) => {

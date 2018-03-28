@@ -34,6 +34,7 @@
     "gatsby-remark-smartypants": "~1.4.12",
     "gatsby-source-filesystem": "~1.5.27",
     "gatsby-transformer-remark": "~1.7.36",
+    "gatsby-transformer-sharp": "~1.6.22",
     "lodash": "~4.17.5",
     "moment": "~2.21.0",
     "moment-timezone": "~0.5.14",
@@ -50,6 +51,7 @@
     "react-textarea-autosize": "~6.0.0",
     "recompose": "~0.26.0",
     "rehype-react": "~3.0.2",
+    "sharp": "~0.20.1",
     "styled-components": "~3.2.2",
     "typography": "~0.16.6",
     "typography-theme-twin-peaks": "~0.15.11"

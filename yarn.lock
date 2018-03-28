@@ -4035,7 +4035,7 @@ fs-extra@^1.0.0:
     jsonfile "^2.1.0"
     klaw "^1.0.0"
 
-fs-extra@^4.0.1:
+fs-extra@^4.0.1, fs-extra@^4.0.2:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
   dependencies:
@@ -4288,6 +4288,15 @@ gatsby-transformer-remark@~1.7.36:
     unist-util-remove-position "^1.1.1"
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
+
+gatsby-transformer-sharp@~1.6.22:
+  version "1.6.22"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.22.tgz#120baf195dcf60f452604c84df02d09362ded423"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    fs-extra "^4.0.2"
+    probe-image-size "^3.2.0"
 
 gatsby@~1.9.215:
   version "1.9.232"
@@ -7077,6 +7086,10 @@ multipipe@^0.1.2:
 mute-stream@0.0.7, mute-stream@~0.0.4:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
+
+nan@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
 nan@^2.3.0, nan@^2.9.2:
   version "2.9.2"
@@ -10186,6 +10199,21 @@ sharp@^0.20.0:
     detect-libc "^1.0.3"
     fs-copy-file-sync "^1.0.1"
     nan "^2.9.2"
+    npmlog "^4.1.2"
+    prebuild-install "^2.5.1"
+    semver "^5.5.0"
+    simple-get "^2.7.0"
+    tar "^4.4.0"
+    tunnel-agent "^0.6.0"
+
+sharp@~0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.20.1.tgz#13adde896bc9ec0372b0907554e0329f35a7bce6"
+  dependencies:
+    color "^3.0.0"
+    detect-libc "^1.0.3"
+    fs-copy-file-sync "^1.0.1"
+    nan "^2.10.0"
     npmlog "^4.1.2"
     prebuild-install "^2.5.1"
     semver "^5.5.0"

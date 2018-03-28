@@ -40,12 +40,18 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
     },
     {
+      resolve: `gatsby-transformer-sharp`,
+    },
+    {
       resolve: `gatsby-plugin-catch-links`,
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
           },
@@ -56,9 +62,6 @@ module.exports = {
               maxWidth: theme.content.imageMaxWidthPx,
             },
           },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          }
         ],
       },
     },

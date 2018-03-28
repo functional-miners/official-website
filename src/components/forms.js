@@ -225,7 +225,7 @@ export class ContactForm extends React.Component {
     return (
       <FormGrid fluid>
         <Helmet>
-          <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+          <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
         </Helmet>
         <Row center={`xs`}>
           <Col xs={12}>
