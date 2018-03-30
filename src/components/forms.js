@@ -21,10 +21,6 @@ const ActionButton = styled.button`
   line-height: ${rhythm(0.5)};
 
   ${styles.media.tablet`
-    width: 304px;
-  `}
-
-  ${styles.media.phoneL`
     width: 100%;
   `}
 
@@ -71,7 +67,7 @@ const ErrorMessage = styled.span`
 `;
 
 const NiceTextarea = styled(TextArea)`
-  min-width: 100%;
+  width: 100%;
   min-height: 100px;
   resize: vertical;
   outline: 0;
@@ -113,7 +109,7 @@ class LongTextClass extends React.Component {
 const LongText = withFormsy(LongTextClass);
 
 const NiceInput = styled.input`
-  min-width: 100%;
+  width: 100%;
   outline: 0;
   border: 0;
   border-bottom: 1px solid ${theme.colors.mayaBlue};
