@@ -77,12 +77,6 @@ export const query = graphql`
       }
     }
 
-    summary : imageSharp(id: { regex: "/summary-of-past-year/" }) {
-      sizes(maxWidth: 800) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
     page : markdownRemark(fields: { slug: { eq: "/" } }) {
       htmlAst
     }
@@ -110,6 +104,12 @@ export const query = graphql`
             eventPage
           }
         }
+      }
+    }
+
+    summary : imageSharp(id: { regex: "/summary-of-past-year/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

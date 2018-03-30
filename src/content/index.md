@@ -10,11 +10,19 @@ If we gained your interest, we encourage you to participate in the next event, s
 We meet regularly on the **4th Tuesday** each quarter at *<time>5:30 PM</time>*, talks start around *<time>6 PM CET / CEST</time>*. Our next meeting is planned as following:
 
 <section>
+  <event-details></event-details>
+</section>
+
+<section>
   <div>Help us spread the word in <em>social media</em>:</div>
   <social-buttons></social-buttons>
 </section>
 
 You can also ask a direct question here via *Facebook*:
+
+<section>
+  <facebook-comments></facebook-comments>
+</section>
 
 ## Contact
 
