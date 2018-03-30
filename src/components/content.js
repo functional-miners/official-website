@@ -111,6 +111,10 @@ const Tag = PlainListItem.extend`
   background-color: ${theme.colors.mayaBlue};
 
   white-space: nowrap;
+
+  ${props => !props.noShadow && css`
+    box-shadow: 0 0.5rem 1rem 0.1rem ${theme.colors.shadow};
+  `}
 `;
 
 export const TagsList = ({ tags }) => (

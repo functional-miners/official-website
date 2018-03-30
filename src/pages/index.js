@@ -1,11 +1,12 @@
 import React from "react";
+import Img from "gatsby-image";
 import { withPrefix } from "gatsby-link";
 
 import { Paper } from "../components/content";
 import { renderAst } from "../components/markdown-components";
 
 const passPropsToComponentsFromMarkup = function passPropsToComponentsFromMarkup (ast, props) {
-  const { url, event, googleRecaptchaSiteKey, facebookAppId } = props;
+  const { url, event, contactFormHandlerUrl, googleRecaptchaSiteKey, facebookAppId } = props;
 
   ast.children.forEach(subAst => {
     switch (subAst.tagName) {
@@ -20,10 +21,12 @@ const passPropsToComponentsFromMarkup = function passPropsToComponentsFromMarkup
 
       case `facebook-comments`:
         subAst.properties.appId = facebookAppId;
+        subAst.properties.facebookEventPage = event.frontmatter.eventPage;
         break;
 
       case `contact-form`:
         subAst.properties.googleRecaptchaSiteKey = googleRecaptchaSiteKey;
+        subAst.properties.contactFormHandlerUrl = contactFormHandlerUrl;
         break;
 
       default:
@@ -39,7 +42,7 @@ const passPropsToComponentsFromMarkup = function passPropsToComponentsFromMarkup
 
 export default ({ data, location }) => {
   const { page, mostRecentEvent } = data;
-  const { googleRecaptchaSiteKey, siteUrl, facebookAppId } = data.site.siteMetadata;
+  const { contactFormHandlerUrl, googleRecaptchaSiteKey, siteUrl, facebookAppId } = data.site.siteMetadata;
 
   const pathname = withPrefix(location.pathname);
   const url = `${siteUrl}${pathname}`;
@@ -50,11 +53,15 @@ export default ({ data, location }) => {
     event,
     googleRecaptchaSiteKey,
     facebookAppId,
+    contactFormHandlerUrl,
   };
 
   return (
     <Paper>
       {renderAst(passPropsToComponentsFromMarkup(page.htmlAst, props))}
+      <Img sizes={data.summary.sizes}
+           alt={`Summary of talks given in 2016 in our meetup`}
+           title={`Summary of talks given in 2016 in our meetup`} />
     </Paper>
   );
 };
@@ -66,6 +73,13 @@ export const query = graphql`
         siteUrl
         facebookAppId
         googleRecaptchaSiteKey
+        contactFormHandlerUrl
+      }
+    }
+
+    summary : imageSharp(id: { regex: "/summary-of-past-year/" }) {
+      sizes(maxWidth: 800) {
+        ...GatsbyImageSharpSizes
       }
     }
 
@@ -93,6 +107,7 @@ export const query = graphql`
               link
               name
             }
+            eventPage
           }
         }
       }

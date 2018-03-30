@@ -6,9 +6,7 @@ title: "Book Club"
 
 ## Current edition
 
-We have *collaboratively* decided to read *Scala for the Impatient* by *Cay Horstmann*:
-
-![Scala for the Impatient cover image](../images/book-club/scala-for-impatient.jpg)
+We have *collaboratively* decided to read *Scala for the Impatient* by *Cay Horstmann*.
 
 **You can sign up to the discussion group by [contacting the owner](https://groups.google.com/forum/#!contactowner/functional-miners---book-club).**
 
@@ -28,8 +26,6 @@ If you do not want to buy full book yet, you can find sample of couple first cha
 
 ### First edition
 
-Previously we have decided to read *The Little Elixir and OTP Guidebook* by *Benjamin Tan Wei Hao*:
-
-![The Little Elixir and OTP Guidebook cover image](../images/book-club/the-little-elixir-and-otp-guidebook.jpg)
+Previously we have decided to read *The Little Elixir and OTP Guidebook* by *Benjamin Tan Wei Hao*.
 
 We finished reading club for that book around end of *April* in *2017*. If you are still interested, you can buy this book [here](https://www.manning.com/books/the-little-elixir-and-otp-guidebook).

@@ -24,6 +24,11 @@ const createContentPage = function createContentPage (customizedCreatePage, node
     return;
   }
 
+  if (node.fields.fileName === `book-club`) {
+    customizedCreatePage(node, `./src/pages/book-club.js`);
+    return;
+  }
+
   customizedCreatePage(node, `./src/templates/content-page.js`);
 }
 

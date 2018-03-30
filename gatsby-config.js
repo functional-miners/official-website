@@ -37,10 +37,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
     },
     {
-      resolve: `gatsby-transformer-sharp`,
+      resolve: `gatsby-plugin-react-helmet`,
     },
     {
       resolve: `gatsby-plugin-catch-links`,
@@ -56,14 +60,24 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
           },
           {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              linkImagesToOriginal: false,
+              base64: true,
               maxWidth: theme.content.imageMaxWidthPx,
+              linkImagesToOriginal: false,
             },
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
     },
     {
       resolve: `gatsby-plugin-typography`,

@@ -68,8 +68,14 @@ export const SocialButtons = ({ event, url }) => {
   );
 };
 
-export const FacebookComments = ({ appId }) => (
-  <FacebookProvider appId={appId}>
-    <Comments href={`https://developers.facebook.com/docs/plugins/comments#configurator`} width={`100%`} />
-  </FacebookProvider>
-);
+export const FacebookComments = ({ appId, facebookEventPage }) => {
+  if (!facebookEventPage) {
+    return <span></span>;
+  }
+
+  return (
+    <FacebookProvider appId={appId}>
+      <Comments href={facebookEventPage} width={`100%`} />
+    </FacebookProvider>
+  );
+};

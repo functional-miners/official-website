@@ -1,9 +1,8 @@
 import React from "react";
 import Formsy, { withFormsy } from "formsy-react";
-import Helmet from "react-helmet";
-import Recaptcha from "react-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 import TextArea from "react-textarea-autosize";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Col, Grid, Row } from "react-flexbox-grid";
 
 import { styles } from "./content";
@@ -47,13 +46,15 @@ const ActionButton = styled.button`
   &:disabled {
     cursor: default;
 
-    color: ${theme.colors.gray};
-    border: 2px solid ${theme.colors.gray};
+    ${props => props.state && css`
+      color: ${theme.colors[props.state]};
+      border: 2px solid ${theme.colors[props.state]};
+    `}
   }
 `;
 
-const SendButton = ({ children, disabled, type }) => (
-  <ActionButton type={type} disabled={disabled}>
+const SendButton = ({ children, disabled, state, type }) => (
+  <ActionButton state={state} type={type} disabled={disabled}>
     {children}
     <EnvelopeIcon />
   </ActionButton>
@@ -158,81 +159,88 @@ const FormGrid = styled(Grid)`
   .row {
     margin-bottom: ${rhythm(0.25)};
   }
-`;
 
-const RecaptchaContainer = styled.div`
-  #g-recaptcha div {
-    margin: 10px auto;
+  .grecaptcha-badge {
+    z-index: 1;
   }
-
-  ${styles.media.phoneL`
-    transform: scale(0.82);
-    transform-origin: 0 0;
-  `}
-
-  ${styles.media.phoneM`
-    transform: scale(0.89);
-    transform-origin: 0 0;
-  `}
-
-  ${styles.media.phoneS`
-    transform: scale(0.72);
-    transform-origin: 0 0;
-  `}
 `;
 
 export class ContactForm extends React.Component {
   constructor (props) {
     super(props);
 
+    this.defaultStatus = `normal`;
+    this.defaultText = `Send message!`;
+
+    this.recaptcha = null;
+
     this.state = {
+      status: this.defaultStatus,
+      text: this.defaultText,
+
       formValid: false,
-      captchaVerified: false,
-      submitEnabled: false,
+
+      data: null,
     };
 
     this.onValid = this.onValid.bind(this);
     this.onInvalid = this.onInvalid.bind(this);
 
-    this.onLoad = this.onLoad.bind(this);
     this.onVerify = this.onVerify.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onValid () {
-    this.setState({ formValid: true, submitEnabled: this.state.captchaVerified, captchaVerified: this.state.captchaVerified });
+    this.setState({ formValid: true, text: this.defaultText, status: this.defaultStatus, data: this.state.data });
   }
 
   onInvalid () {
-    this.setState({ formValid: false, submitEnabled: false, captchaVerified: this.state.captchaVerified });
+    this.setState({ formValid: false, text: this.defaultText, status: this.defaultStatus, data: this.state.data });
   }
 
-  onLoad () {
-    this.setState({ formValid: this.state.formValid, submitEnabled: this.state.formValid, captchaVerified: false });
-  }
+  onVerify (recaptcha) {
+    const data = {
+      from: `https://functional-miners.org`,
+      recaptcha,
+      ...this.state.data
+    };
 
-  onVerify () {
-    this.setState({ formValid: this.state.formValid, submitEnabled: this.state.formValid, captchaVerified: true });
+    const options = {
+      body: JSON.stringify(data),
+      cache: `no-cache`,
+      credentials: `same-origin`,
+      headers: {
+        "content-type": `application/json`
+      },
+      method: `POST`,
+      mode: `cors`,
+    };
+
+    fetch(this.props.contactFormHandlerUrl, options).then(
+      () => this.setState({ formValid: false, data: null, text: `Thanks!`, status: `success` }),
+      () => this.setState({ formValid: false, data: null, text: `Error!`, status: `error` })
+    );
   }
 
   onSubmit (data) {
-    // eslint-disable-next-line no-console
-    console.info(data, this.state);
+    if (this.recaptcha) {
+      this.setState({ formValid: false, text: `Sending...`, status: this.defaultStatus, data });
+
+      this.recaptcha.reset();
+      this.recaptcha.execute();
+    }
   }
 
   render () {
     return (
       <FormGrid fluid>
-        <Helmet>
-          <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
-        </Helmet>
         <Row center={`xs`}>
           <Col xs={12}>
             <Formsy onValidSubmit={this.onSubmit} onValid={this.onValid} onInvalid={this.onInvalid}>
               <Row center={`xs`}>
                 <Col md={12} lg={6}>
-                  <Text name={`text`} title={`Your name`} required />
+                  <Text name={`name`} title={`Your name`} required />
                 </Col>
                 <Col md={12} lg={6}>
                   <Text name={`email`} title={`Your email`} validations={`isEmail`} validationError={`Invalid email`} required />
@@ -244,17 +252,20 @@ export class ContactForm extends React.Component {
                 </Col>
               </Row>
               <Row center={`xs`} middle={`xs`}>
-                <Col md={12} lg={6}>
-                  <RecaptchaContainer>
-                    <Recaptcha
-                      sitekey={this.props.googleRecaptchaSiteKey}
-                      render={`explicit`}
-                      onloadCallback={this.onLoad}
-                      verifyCallback={this.onVerify} />
-                  </RecaptchaContainer>
-                </Col>
-                <Col md={12} lg={6}>
-                  <SendButton type={`submit`} disabled={!this.state.submitEnabled}>Send message!</SendButton>
+                <Col xs={12}>
+                  <ReCAPTCHA ref={element => {
+                                    this.recaptcha = element;
+                                 }}
+                             sitekey={this.props.googleRecaptchaSiteKey}
+                             size={`invisible`}
+                             onChange={this.onVerify}
+                             badge={`bottomright`} />
+
+                  <SendButton type={`submit`}
+                              state={this.state.status}
+                              disabled={!this.state.formValid}>
+                    {this.state.text}
+                  </SendButton>
                 </Col>
               </Row>
             </Formsy>

@@ -7,6 +7,8 @@ const diamond = `rgb(196, 233, 255)`;
 const cyanCornflowerBlue = `rgb(34, 133, 191)`;
 const mayaBlue = `rgb(92, 194, 255)`;
 const brilliantAzure = `rgb(45, 177, 255)`;
+const red = `rgb(159, 59, 34)`;
+const green = `rgb(119, 221, 119)`;
 
 module.exports = {
   animations: {
@@ -26,6 +28,10 @@ module.exports = {
     white,
     black,
     gray,
+
+    normal: gray,
+    error: red,
+    success: green,
 
     foreground: black,
     background: diamond,

@@ -1,20 +1,14 @@
 import React from "react";
+import Img from "gatsby-image";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import { Col, Grid, Row } from "react-flexbox-grid";
-
-import imgLogo from "../images/favicon.png";
 
 import theme from "../theme/main";
 import { rhythm } from "../theme/typography";
 
 const Navigation = styled.nav`
   margin: ${rhythm(1)} 0;
-`;
-
-const LogoImage = styled.img`
-  max-width: 75px;
-  margin: 0;
 `;
 
 const Title = styled.h1`
@@ -26,7 +20,7 @@ const NoLink = styled(Link)`
   background-image: none;
 `;
 
-export const NavigationBar = ({ title }) => (
+export const NavigationBar = ({ title, logo }) => (
   <Navigation>
     <Grid fluid>
       <Row center={`xs`} middle={`xs`}>
@@ -34,7 +28,7 @@ export const NavigationBar = ({ title }) => (
           <NoLink to={`/`}>
             <Row center={`xs`} middle={`xs`}>
               <Col md={3} sm={12}>
-                <LogoImage src={imgLogo} />
+                <Img alt={`Functional Miners logo`} title={`Functional Miners logo`} resolutions={logo.resolutions} />
               </Col>
               <Col md={9} sm={12}>
                 <Title>{title}</Title>
@@ -65,3 +59,13 @@ export const NavigationBar = ({ title }) => (
     </Grid>
   </Navigation>
 );
+
+export const LogoImageQuery = graphql`
+  fragment LogoImageQuery on RootQueryType {
+    logoImage : imageSharp(id: { regex: "/favicon/" }) {
+      resolutions(width: 75, height: 75) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+  }
+`;

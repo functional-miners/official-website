@@ -59,7 +59,7 @@ export default ({ children, data }) => {
       </Helmet>
       <Main>
         <header>
-          <NavigationBar title={title} />
+          <NavigationBar title={title} logo={data.logoImage} />
         </header>
         {children()}
         <footer>
@@ -73,6 +73,8 @@ export default ({ children, data }) => {
 
 export const query = graphql`
   query IndexQuery {
+    ...LogoImageQuery
+
     site {
       siteMetadata {
         title

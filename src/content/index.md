@@ -10,19 +10,11 @@ If we gained your interest, we encourage you to participate in the next event, s
 We meet regularly on the **4th Tuesday** each quarter at *<time>5:30 PM</time>*, talks start around *<time>6 PM CET / CEST</time>*. Our next meeting is planned as following:
 
 <section>
-  <event-details></event-details>
-</section>
-
-<section>
   <div>Help us spread the word in <em>social media</em>:</div>
   <social-buttons></social-buttons>
 </section>
 
 You can also ask a direct question here via *Facebook*:
-
-<section>
-  <facebook-comments></facebook-comments>
-</section>
 
 ## Contact
 
@@ -37,5 +29,3 @@ Also, if you are interested in being a *sponsor* of that event - let&#39;s stay 
 ## Summary of 2017
 
 Our user group started in 2016 and we are active since then. Older events are be available in the archive, feel free to explore them. For those of you who likes more  Below you can find summary of our activity in the 2017:
-
-![Summary of all talks made on Functional Miners from 2017](../images/2017-summary.png)
