@@ -24,8 +24,15 @@ const createContentPage = function createContentPage (customizedCreatePage, node
     return;
   }
 
+  // Ugly hacks for not working `gatsby-remark-images`.
+
   if (node.fields.fileName === `book-club`) {
     customizedCreatePage(node, `./src/pages/book-club.js`);
+    return;
+  }
+
+  if (node.fields.fileName === `computer-science-nerdz`) {
+    customizedCreatePage(node, `./src/pages/computer-science-nerdz.js`);
     return;
   }
 
