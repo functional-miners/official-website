@@ -7,6 +7,8 @@ import { CookieBar } from "../components/cookies";
 import { NavigationBar } from "../components/navigation";
 import { SummarySection } from "../components/summary";
 
+import imgSiteLogo from "../images/favicon.png";
+
 import theme from "../theme/main";
 
 const Main = styled.main`
@@ -16,7 +18,8 @@ const Main = styled.main`
 export default ({ children, data }) => {
   const { headTitle, title, description, author, tags, contactData, facebookAppId } = data.site.siteMetadata;
 
-  const siteCanonicalLink = data.site.siteMetadata.siteUrl;
+  const siteCanonicalLink = `${data.site.siteMetadata.siteUrl}/`;
+  const imgSiteLogoUrl = `${data.site.siteMetadata.siteUrl}${imgSiteLogo}`;
 
   const { twitter, facebook, meetup } = data.site.siteMetadata.socialMedia;
 
@@ -53,6 +56,9 @@ export default ({ children, data }) => {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
 
+        <meta property="og:image" content={imgSiteLogoUrl} />
+        <meta property="og:image:alt" content={headTitle} />
+
         <meta property="fb:app_id" content={facebookAppId} />
 
         <link rel="canonical" href={siteCanonicalLink} />
@@ -83,6 +89,7 @@ export const query = graphql`
         author
         siteUrl
         tags
+        facebookAppId
         socialMedia {
           facebook
           meetup
