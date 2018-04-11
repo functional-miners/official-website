@@ -67,7 +67,7 @@ export class CookieBar extends React.Component {
     super(props)
 
     this.state = {
-      cookiesAccepted: false,
+      cookiesAccepted: true,
     };
 
     this.acceptConsent = this.acceptConsent.bind(this);
