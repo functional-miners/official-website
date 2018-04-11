@@ -20,6 +20,10 @@ const SocialButtonsContainer = styled.div`
   svg {
     cursor: pointer;
   }
+
+  .share-count {
+    text-align: center
+  }
 `;
 
 export const SocialButtons = ({ event, url }) => {
