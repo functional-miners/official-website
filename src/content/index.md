@@ -7,7 +7,9 @@ title: "Main Page"
 
 If we gained your interest, we encourage you to participate in the next event, see details below. If you are still in doubt if that meet-up is for you, feel free to look on summary of our activity from *2017* down below. Also we are organizing a [reading club](/book-club) around aforementioned topics.
 
-We meet regularly on the **4th Tuesday** each quarter at *<time>5:30 PM</time>*, talks start around *<time>6 PM CET / CEST</time>*. Our next meeting is planned as following:
+We meet regularly on the **3rd** or **4th Tuesday** on monthly basis, interleaving *Functional Miners* and *Computer Science Nerdz* meetings.
+
+Event starts at *<time>5:30 PM</time>*, and talks around *<time>6 PM CET / CEST</time>*. Our next meeting is planned as following:
 
 <section>
   <event-details></event-details>
