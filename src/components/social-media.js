@@ -1,4 +1,5 @@
 import React from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 import FacebookProvider, { Comments } from "react-facebook";
@@ -7,7 +8,34 @@ import { EmailIcon, EmailShareButton,
          LinkedinIcon, LinkedinShareButton, LinkedinShareCount,
          TwitterIcon, TwitterShareButton } from "react-share";
 
+import { Dimmed } from "./content";
+import { SocialMediaIcon } from "./icons";
+
 import { rhythm } from "../theme/typography";
+
+export const ShowWhenFacebookPageIsPresent = ({ children, facebookEventPage }) => {
+  if (!facebookEventPage) {
+    return <span></span>;
+  }
+
+  return (
+    <section>{children}</section>
+  );
+}
+
+export const SocialMediaLink = ({ href, icon }) => {
+  const iconElement = <FontAwesomeIcon icon={icon} />;
+
+  let element = <a href={href} target={`_blank`}>{iconElement}</a>
+
+  if (!href) {
+    element = <Dimmed>{iconElement}</Dimmed>;
+  }
+
+  return (
+    <SocialMediaIcon>{element}</SocialMediaIcon>
+  );
+}
 
 const SocialButtonsContainer = styled.div`
   margin: ${rhythm(1)} auto;

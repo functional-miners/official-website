@@ -21,7 +21,11 @@ const passPropsToComponentsFromMarkup = function passPropsToComponentsFromMarkup
 
       case `facebook-comments`:
         subAst.properties.appId = facebookAppId;
-        subAst.properties.facebookEventPage = event.frontmatter.eventPage;
+        subAst.properties.facebookEventPage = event.frontmatter.pages.facebook;
+        break;
+
+      case `show-when-facebook-page-is-present`:
+        subAst.properties.facebookEventPage = event.frontmatter.pages.facebook;
         break;
 
       case `contact-form`:
@@ -101,7 +105,10 @@ export const query = graphql`
               link
               name
             }
-            eventPage
+            pages {
+              facebook
+              meetup
+            }
           }
         }
       }

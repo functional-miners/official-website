@@ -4,11 +4,11 @@ import { Paper } from "../components/content";
 import { EventDetails } from "../components/event-details";
 
 export default ({ data }) => {
-  const eventPage = data.page;
+  const eventData = data.page;
 
   return (
     <Paper>
-      <EventDetails event={eventPage} />
+      <EventDetails event={eventData} />
     </Paper>
   );
 };
@@ -28,6 +28,10 @@ export const query = graphql`
           }
           link
           name
+        }
+        pages {
+          facebook
+          meetup
         }
       }
     }

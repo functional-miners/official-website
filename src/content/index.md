@@ -20,11 +20,14 @@ Event starts at *<time>5:30 PM</time>*, and talks around *<time>6 PM CET / CEST<
   <social-buttons></social-buttons>
 </section>
 
-You can also ask a direct question here via *Facebook*:
-
-<section>
-  <facebook-comments></facebook-comments>
-</section>
+<show-when-facebook-page-is-present>
+  <p>
+    You can also ask a direct question here via <em>Facebook</em>:
+  </p>
+  <section>
+    <facebook-comments></facebook-comments>
+  </section>
+</show-when-facebook-page-is-present>
 
 ## Contact
 
