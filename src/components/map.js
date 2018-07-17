@@ -7,7 +7,7 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 const StyledMap = styled(Map)`
-  height: 50vw;
+  height: 30vw;
 `;
 
 export const MapWithMarker = ({ location, name, link }) => {
@@ -17,7 +17,7 @@ export const MapWithMarker = ({ location, name, link }) => {
   ];
 
   return (
-    <StyledMap center={position} zoom={20}>
+    <StyledMap center={position} zoom={17}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
