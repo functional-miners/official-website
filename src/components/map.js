@@ -6,6 +6,7 @@ import { rhythm } from "../theme/typography";
 
 const MapComponent = styled.iframe`
   margin-bottom: 0;
+  width: 85%;
 `;
 
 const MapDescription = styled.p`
