@@ -108,6 +108,7 @@ export const query = graphql`
             pages {
               facebook
               meetup
+              youtube
             }
           }
         }

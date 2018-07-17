@@ -1,7 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import { faFacebookF, faMeetup } from "@fortawesome/fontawesome-free-brands";
+import { faFacebookF, faMeetup, faYoutube } from "@fortawesome/fontawesome-free-brands";
 import moment from "moment";
 
 import { CallToAction, Dimmed, TagsList } from "./content";
@@ -30,6 +30,14 @@ export const EventDetails = ({ event }) => {
       <CallToAction>
         Event will be <Moment fromNow>{receivedEvent.frontmatter.date}</Moment>.
       </CallToAction>;
+  }
+
+  let youtubeIcon = null;
+
+  if (pages.youtube) {
+    youtubeIcon = <Col>
+      <SocialMediaLink href={pages.youtube} icon={faYoutube} />
+    </Col>;
   }
 
   return (
@@ -98,6 +106,7 @@ export const EventDetails = ({ event }) => {
                     <Col>
                       <SocialMediaLink href={pages.meetup} icon={faMeetup} />
                     </Col>
+                    {youtubeIcon}
                   </Row>
                 </Col>
               </Row>

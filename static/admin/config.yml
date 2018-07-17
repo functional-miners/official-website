@@ -29,7 +29,7 @@ collections:
             label: Place name
             widget: string
           - name: link
-            label: Google Maps URL
+            label: Any Maps URL
             widget: string
           - name: location
             label: Coordinates
