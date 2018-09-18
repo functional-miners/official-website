@@ -1,5 +1,6 @@
 ---
 title: "Organizers"
+centered: true
 ---
 
 # Organizers
@@ -19,5 +20,16 @@ title: "Organizers"
     name="Wojciech Gawronski"
     bio="Co-organizer of <em>Functional Miners</em>. <br/> During the day: <strong>BEAM (Elixir, Erlang)</strong>, <strong>DevOps</strong>, <strong>Serverless</strong> and <strong>Cloud Computing</strong> enthusiast, during the night - meet-ups organizer, bookworm and IT geek."
     social='{ "twitter": "https://twitter.com/afronski", "github": "https://github.com/afronski", "linkedin": "https://www.linkedin.com/in/afronski", "facebook": "https://www.facebook.com/afronski", "www": "http://afronski.pl" }'>
+   </person-profile>
+</section>
+
+# Recording and Editing
+
+<section>
+  <person-profile
+    avatar="mateusz_mrowiec.jpg"
+    name="Mateusz Mrowiec"
+    bio="An audio and video wizard. <br/> Mateusz is a full-stack powerhouse. Supporter of Linux and the open-source movement. Interested in computer graphics and distributed systems. Hacker, tinkerer and a dad. Raising a future hacker. Loves hackathons, gaming, game development and music. Never creates bugs... only features."
+    social='{ "twitter": "https://twitter.com/mr_oova", "linkedin": "https://www.linkedin.com/in/mmrowiec", "github": "https://github.com/Haggus" }'>
    </person-profile>
 </section>
