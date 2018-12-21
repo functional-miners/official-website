@@ -5,6 +5,8 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 import { SocialIcons } from "./icons";
 
 import theme from "../theme/main";
+import { rhythm } from "../theme/typography";
+
 
 // This needs to be fixed:
 //
@@ -27,6 +29,18 @@ const Avatar = styled.img`
   border: 5px solid ${theme.colors.brilliantAzure};
 `;
 
+const NiceCol = styled(Col)`
+  margin: ${rhythm(0.5)} 0;
+`;
+
+const NoMarginCol = styled(Col)`
+  margin: 0;
+
+  p {
+    margin: 0;
+  }
+`;
+
 export const PersonProfile = ({ avatar, name, bio, title, abstract, social }) => {
   let titleSection = <span></span>;
   let abstractSection = <span></span>;
@@ -36,21 +50,21 @@ export const PersonProfile = ({ avatar, name, bio, title, abstract, social }) =>
 
   if (title && abstract) {
     titleSection =
-      <Col xs={12}>
+      <NoMarginCol xs={12}>
         <h4 dangerouslySetInnerHTML={{ __html: `<strong>Title</strong>: ${title}` }} />
-      </Col>;
+      </NoMarginCol>;
 
     abstractSection =
-      <Col xs={12}>
+      <NoMarginCol xs={12}>
         <p dangerouslySetInnerHTML={{ __html: `<strong>Abstract</strong>: ${abstract}` }} />
-      </Col>
+      </NoMarginCol>
   }
 
   if (bio) {
     bioSection =
-      <Col xs={12}>
-        <p dangerouslySetInnerHTML={{ __html: bio }} />
-      </Col>;
+      <NoMarginCol xs={12}>
+        <p dangerouslySetInnerHTML={{ __html: `<strong>Bio</strong>: ${bio}` }} />
+      </NoMarginCol>;
   }
 
   return (
@@ -58,16 +72,16 @@ export const PersonProfile = ({ avatar, name, bio, title, abstract, social }) =>
       <Row center={`xs`}>
         {titleSection}
         {abstractSection}
-        <Col xs={12}>
+        <NiceCol xs={12}>
           <Avatar src={peopleAvatars[avatar]} alt={name} />
-        </Col>
+        </NiceCol>
         <Col xs={12}>
           <h5 dangerouslySetInnerHTML={{ __html: name }} />
         </Col>
-        <Col sm={12} md={4}>
-          <SocialIcons social={socialProfiles} />
-        </Col>
         {bioSection}
+        <NiceCol sm={12} md={4}>
+          <SocialIcons social={socialProfiles} />
+        </NiceCol>
       </Row>
     </Grid>
   );
