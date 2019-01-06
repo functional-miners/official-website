@@ -7,19 +7,7 @@ import { SocialIcons } from "./icons";
 import theme from "../theme/main";
 import { rhythm } from "../theme/typography";
 
-
-// This needs to be fixed:
-//
-// - It is against `gatsby-image` and image pipeline processing.
-// - PROBLEM: How to parametrize GraphQL fragment?
-//   - You can't, so we need to do it in different way.
-
-const getImages = function getImages (resolver) {
-  return resolver.keys().reduce((accumulator, item) => {
-    accumulator[item.replace(`./`, ``)] = resolver(item);
-    return accumulator;
-  }, {});
-};
+import {getImages} from "../utils/image-resolver";
 
 const peopleAvatars = getImages(require.context(`../images/people`, false, /\.(png|jpe?g)$/));
 

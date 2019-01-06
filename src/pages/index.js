@@ -110,6 +110,7 @@ export const query = graphql`
               meetup
               youtube
             }
+            cover
           }
         }
       }
