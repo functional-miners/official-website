@@ -93,6 +93,7 @@ export const ParagraphAlignedToRight = styled.p`
 
 const EvenlySpacedList = PlainList.extend`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 `;
