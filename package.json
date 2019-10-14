@@ -19,7 +19,7 @@
     "color": "~3.0.0",
     "formsy-react": "~1.1.4",
     "gatsby": "~1.9.215",
-    "gatsby-cli": "^1.1.58",
+    "gatsby-cli": "~1.1.58",
     "gatsby-image": "~1.0.42",
     "gatsby-link": "~1.6.39",
     "gatsby-plugin-catch-links": "~1.0.19",
