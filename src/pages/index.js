@@ -64,8 +64,8 @@ export default ({ data, location }) => {
     <Paper>
       {renderAst(passPropsToComponentsFromMarkup(page.htmlAst, props))}
       <Img sizes={data.summary.sizes}
-           alt={`Summary of talks given in 2016 in our meetup`}
-           title={`Summary of talks given in 2016 in our meetup`} />
+           alt={`Summary of talks given in 2017 in our meetup`}
+           title={`Summary of talks given in 2017 in our meetup`} />
     </Paper>
   );
 };

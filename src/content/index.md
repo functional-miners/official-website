@@ -7,27 +7,9 @@ title: "Main Page"
 
 If we gained your interest, we encourage you to participate in the next event, see details below. If you are still in doubt if that meet-up is for you, feel free to look on summary of our activity from *2017* down below. Also we are organizing a [reading club](/book-club) around aforementioned topics.
 
-We meet regularly on the **3rd** or **4th Tuesday** on monthly basis, interleaving *Functional Miners* and *Computer Science Nerdz* meetings.
+**For now we do not plan any further events as the initiative is temporarily suspended**.
 
-Event starts at *<time>5:30 PM</time>*, and talks around *<time>6 PM CET / CEST</time>*. Our next meeting is planned as following:
-
-<section>
-  <event-details></event-details>
-</section>
-
-<section>
-  <div>Help us spread the word in <em>social media</em>:</div>
-  <social-buttons></social-buttons>
-</section>
-
-<show-when-facebook-page-is-present>
-  <p>
-    You can also ask a direct question here via <em>Facebook</em>:
-  </p>
-  <section>
-    <facebook-comments></facebook-comments>
-  </section>
-</show-when-facebook-page-is-present>
+In the past, we usually met on the **3rd** or **4th Tuesday** on monthly basis, interleaving *Functional Miners* and *Computer Science Nerdz* meetings. Event started at *<time>5:30 PM</time>*, and talks around *<time>6 PM CET / CEST</time>*.
 
 ## Contact
 

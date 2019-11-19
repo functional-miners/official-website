@@ -59,7 +59,6 @@ export const query = graphql`
     }
 
     events : allMarkdownRemark(
-      skip: 1
       filter: { fields: { type: { eq: "events" } } }
       sort: { order: DESC, fields: [ frontmatter___date ] }
     ) {
