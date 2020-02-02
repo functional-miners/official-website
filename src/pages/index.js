@@ -63,9 +63,6 @@ export default ({ data, location }) => {
   return (
     <Paper>
       {renderAst(passPropsToComponentsFromMarkup(page.htmlAst, props))}
-      <Img sizes={data.summary.sizes}
-           alt={`Summary of talks given in 2017 in our meetup`}
-           title={`Summary of talks given in 2017 in our meetup`} />
     </Paper>
   );
 };
@@ -107,18 +104,11 @@ export const query = graphql`
             }
             pages {
               facebook
-              meetup
               youtube
             }
             cover
           }
         }
-      }
-    }
-
-    summary : imageSharp(id: { regex: "/summary-of-past-year/" }) {
-      sizes(maxWidth: 800) {
-        ...GatsbyImageSharpSizes
       }
     }
   }

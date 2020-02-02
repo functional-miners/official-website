@@ -21,12 +21,11 @@ export default ({ children, data }) => {
   const siteCanonicalLink = `${data.site.siteMetadata.siteUrl}/`;
   const imgSiteLogoUrl = `${data.site.siteMetadata.siteUrl}${imgSiteLogo}`;
 
-  const { twitter, facebook, meetup } = data.site.siteMetadata.socialMedia;
+  const { twitter, facebook } = data.site.siteMetadata.socialMedia;
 
   const socialProfiles = {
     twitterProfile: `https://twitter.com/${twitter}`,
-    facebookProfile: `https://facebook.com/${facebook}`,
-    meetupProfile: `https://www.meetup.com/${meetup}`,
+    facebookProfile: `https://facebook.com/${facebook}`
   };
 
   return (
@@ -92,7 +91,6 @@ export const query = graphql`
         facebookAppId
         socialMedia {
           facebook
-          meetup
           twitter
         }
         contactData {

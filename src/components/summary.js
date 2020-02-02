@@ -3,7 +3,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import { faFacebookF, faMeetup, faTwitter } from "@fortawesome/fontawesome-free-brands";
+import { faFacebookF, faTwitter } from "@fortawesome/fontawesome-free-brands";
 
 import { GoogleAnalyticsOptOutLink } from "./cookies"
 import { SocialMediaIcon } from "./icons";
@@ -67,11 +67,6 @@ export const SummarySection = ({ social, contact }) => (
                 </Col>
                 <Col>
                   <SocialMediaIcon>
-                    <a href={social.meetupProfile} target={`_blank`}><FontAwesomeIcon icon={faMeetup} /></a>
-                  </SocialMediaIcon>
-                </Col>
-                <Col>
-                  <SocialMediaIcon>
                     <a href={social.twitterProfile} target={`_blank`}><FontAwesomeIcon icon={faTwitter} /></a>
                   </SocialMediaIcon>
                 </Col>
@@ -101,7 +96,7 @@ export const SummarySection = ({ social, contact }) => (
       </Row>
       <Row center={`xs`}>
         <SmallEm>
-          Copyright &copy; White Rook &minus; 2018
+          Copyright &copy; White Rook &minus; 2020
         </SmallEm>
       </Row>
     </FooterGrid>

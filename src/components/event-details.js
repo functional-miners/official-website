@@ -2,7 +2,7 @@ import React from "react";
 import Moment from "react-moment";
 import Img from "gatsby-image";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import { faFacebookF, faMeetup, faYoutube } from "@fortawesome/fontawesome-free-brands";
+import { faFacebookF, faYoutube } from "@fortawesome/fontawesome-free-brands";
 import moment from "moment";
 
 import { CallToAction, Dimmed, TagsList } from "./content";
@@ -114,9 +114,6 @@ export const EventDetails = ({ event }) => {
                   <Row around={`xs`} >
                     <Col>
                       <SocialMediaLink href={pages.facebook} icon={faFacebookF} />
-                    </Col>
-                    <Col>
-                      <SocialMediaLink href={pages.meetup} icon={faMeetup} />
                     </Col>
                     {youtubeIcon}
                   </Row>

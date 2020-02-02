@@ -4,7 +4,7 @@ title: "Book Club"
 
 # Book Club
 
-## Current edition
+## Past edition
 
 We have *collaboratively* decided to read *Scala for the Impatient* by *Cay Horstmann*.
 
@@ -22,7 +22,7 @@ If you do not want to buy full book yet, you can find sample of couple first cha
 - Presenter shows the chapter and reads it together with participants, including analysis of interesting bits.
 - We should finish the book after 12-13 meetings (depending on the tempo).
 
-## Previous editions
+## Earlier editions
 
 ### First edition
 

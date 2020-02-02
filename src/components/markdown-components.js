@@ -5,6 +5,7 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 
 import { EventDetails } from "./event-details";
 import { ContactForm } from "./forms";
+import { Newsletter } from "./newsletter";
 import { HomeIcon } from "./icons";
 import { PersonProfile } from "./images";
 import { Schedule } from "./schedule";
@@ -19,6 +20,7 @@ const components = {
   "event-details": EventDetails,
   "contact-form": ContactForm,
   "person-profile": PersonProfile,
+  "newsletter": Newsletter,
 
   "show-when-facebook-page-is-present": ShowWhenFacebookPageIsPresent,
   "social-buttons": SocialButtons,
